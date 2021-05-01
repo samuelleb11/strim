@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  p Let there be video
+  input(type='text' id='video_id' value='37331')
+  input(type='button' id='go')
+  div(id='player')
+  script(src='//cdn.jsdelivr.net/npm/hls.js@latest')
+  script(src='//cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js')
+  script(src='javascripts/video.js')
