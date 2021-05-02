@@ -43,7 +43,16 @@ function seekVideo(video, time) {
 }
 let playingInterval;
 $(document).ready(function() {
-    var exampleSocket = new WebSocket("ws://" + window.location.hostname + ":" + window.location.port);
+    if (window.location.protocol != "https:"){
+        var socketURL = "ws://" + window.location.hostname
+    }
+    else {
+        var socketURL = "wss://" + window.location.hostname
+    }
+    if (window.location.port !== ""){
+        socketURL = socketURL + ":" + window.location.port
+    }
+    var exampleSocket = new WebSocket(socketURL);
     exampleSocket.onopen = () => {
         $('#go').click(function () {
             const id = $('#video_id').val();
