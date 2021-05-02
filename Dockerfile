@@ -9,4 +9,4 @@ RUN cd /strim && \
   npm install
 ENTRYPOINT []
 CMD supervisord -c /etc/supervisor/conf.d/supervisord.conf
-EXPOSE 3181
+EXPOSE 3000
